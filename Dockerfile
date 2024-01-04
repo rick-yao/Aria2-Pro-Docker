@@ -17,13 +17,11 @@ RUN apk add --no-cache jq findutils && \
     curl -fsSL git.io/aria2c.sh | bash && \
     rm -rf /var/cache/apk/* /tmp/*
 
-RUN wget https://github.com/rick-yao/Onedownloader/raw/master/OneDriveUploader/amd64/linux/OneDriveUploader
-RUN chmod +x OneDriveUploader
-
-RUN wget -O uploader.sh https://raw.githubusercontent.com/rick-yao/someconf/main/aria2/uploader.sh
-RUN chmod +x uploader.sh
 
 COPY rootfs /
+
+RUN chmod +x OneDriveUploader
+RUN chmod +x uploader.sh
 
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=1 \
     RCLONE_CONFIG=/config/rclone.conf \
