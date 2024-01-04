@@ -22,4 +22,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: rick-yao/aria2-oneupload:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/aria2-oneupload:latest
