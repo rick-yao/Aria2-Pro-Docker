@@ -8,13 +8,13 @@ services:
       - PUID=65534
       - PGID=65534
       - UMASK_SET=022
-      - RPC_SECRET=P3TERX
+      # add this section
+      - RPC_SECRET=
       - RPC_PORT=6800
       - LISTEN_PORT=6888
       - DISK_CACHE=64M
       - IPV6_MODE=false
       - UPDATE_TRACKERS=true
-      - CUSTOM_TRACKER_URL=
       - TZ=Asia/Shanghai
     volumes:
       - ./aria2-config:/config
