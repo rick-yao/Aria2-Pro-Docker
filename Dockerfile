@@ -17,7 +17,7 @@ RUN apk add --no-cache jq findutils && \
     curl -fsSL git.io/aria2c.sh | bash && \
     rm -rf /var/cache/apk/* /tmp/*
 
-RUN wget -O /config/OneDriveUploader https://raw.githubusercontent.com/rick-yao/OneList/master/OneDriveUploader/amd64/linux/OneDriveUploader
+RUN wget -O /config/OneDriveUploader https://github.com/rick-yao/Onedownloader/raw/master/OneDriveUploader/amd64/linux/OneDriveUploader
 RUN chmod +x /config/OneDriveUploader
 RUN pwd
 RUN wget -O /config/script/uploader.sh https://raw.githubusercontent.com/rick-yao/someconf/main/aria2/uploader.sh
