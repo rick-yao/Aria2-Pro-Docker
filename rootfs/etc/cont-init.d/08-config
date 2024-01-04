@@ -37,6 +37,7 @@ if ! [[ "${UPDATE_TRACKERS}" = "false" || "${UPDATE_TRACKERS}" = "disable" ]]; t
     rm -f /etc/services.d/crond/down
     PROFILES="tracker.sh"
     DOWNLOAD_PROFILE
+    sed -i 's^on-download-complete=/config/script/clean.sh^on-download-complete=/uploader.sh^g' ${ARIA2_CONF_DIR}/aria2.conf
     bash ${SCRIPT_DIR}/tracker.sh ${ARIA2_CONF}
 else
     touch /etc/services.d/crond/down

@@ -23,8 +23,6 @@ RUN chmod +x OneDriveUploader
 RUN wget -O uploader.sh https://raw.githubusercontent.com/rick-yao/someconf/main/aria2/uploader.sh
 RUN chmod +x uploader.sh
 
-RUN sed -i 's^on-download-complete=/config/script/clean.sh^on-download-complete=/uploader.sh^g' /config/aria2.conf
-
 COPY rootfs /
 
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=1 \
