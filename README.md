@@ -1,3 +1,12 @@
+this is a fork for personal use
+
+1. use compose file to start container
+2. docker exec -it xxx bash
+3. visit [https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=78d4dc35-7e46-42c6-9023-2d39314433a5&response_type=code&redirect_uri=http://localhost/onedrive-login&response_mode=query&scope=offline_access%20User.Read%20Files.ReadWrite.All](https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=78d4dc35-7e46-42c6-9023-2d39314433a5&response_type=code&redirect_uri=http://localhost/onedrive-login&response_mode=query&scope=offline_access%20User.Read%20Files.ReadWrite.All)
+   to get url
+4. run ./OneDriveUploader -ms -a 'url'
+5. cp auth.json /config/
+
 **English** | [中文](https://p3terx.com/archives/docker-aria2-pro.html)
 
 # Aria2 Pro Docker
@@ -13,24 +22,25 @@ A perfect Aria2 Docker image. Out of the box, just add download tasks and don't 
 
 ## Features
 
-* Supported platforms: `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6`
-* Full Function: `Async DNS`, `BitTorrent`, `Firefox3 Cookie`, `GZip`, `HTTPS`, `Message Digest`, `Metalink`, `XML-RPC`, `SFTP`
-* `max-connection-per-server` unlimited.
-* retry on slow speed (`lowest-speed-limit`) and connection close
-* High BT download rate and speed
-* Get BitTorrent tracker automatically
-* Download error automatically delete files
-* Download cancel automatically delete files
-* Automatically clear `.aria2` suffix files
-* Automatically clear `.torrent` suffix files
-* No lost task progress, no repeated downloads
-* And more powerful features
+- Supported platforms: `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6`
+- Full Function: `Async DNS`, `BitTorrent`, `Firefox3 Cookie`, `GZip`, `HTTPS`, `Message Digest`, `Metalink`, `XML-RPC`, `SFTP`
+- `max-connection-per-server` unlimited.
+- retry on slow speed (`lowest-speed-limit`) and connection close
+- High BT download rate and speed
+- Get BitTorrent tracker automatically
+- Download error automatically delete files
+- Download cancel automatically delete files
+- Automatically clear `.aria2` suffix files
+- Automatically clear `.torrent` suffix files
+- No lost task progress, no repeated downloads
+- And more powerful features
 
 ## Usage
 
 ### Docker CLI
 
 - No matter what architecture platform is used, just use the following command to start the container ( Just need to replace the `<TOKEN>` field ):
+
 ```
 docker run -d \
     --name aria2-pro \
@@ -51,6 +61,7 @@ docker run -d \
 ```
 
 - Then you need a WebUI for control, such as [AriaNg](https://github.com/mayswind/AriaNg). [This link](http://ariang.mayswind.net/latest) is provided by the developer and can be used directly. Or use Docker to deploy it yourself:
+
 ```
 docker run -d \
     --name ariang \
@@ -65,16 +76,19 @@ docker run -d \
 ### Docker Compose
 
 - Download [Compose file](https://github.com/P3TERX/Aria2-Pro-Docker/blob/master/docker-compose.yml)
+
 ```
 wget git.io/aria2-pro.yml
 ```
 
 - Edit Compose file
+
 ```
 vim aria2-pro.yml
 ```
 
 - Compose up
+
 ```
 docker-compose -f aria2-pro.yml up -d
 ```
@@ -110,11 +124,11 @@ I am working hard on my English, so this part may be explained in detail later. 
 
 ## Credits
 
-* [aria2](https://github.com/aria2/aria2)
-* [P3TERX/aria2.conf](https://github.com/P3TERX/aria2.conf)
-* [P3TERX/Aria2-Pro-Core](https://github.com/P3TERX/Aria2-Pro-Core)
-* [just-containers/s6-overlay](https://github.com/just-containers/s6-overlay)
-* [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection)
+- [aria2](https://github.com/aria2/aria2)
+- [P3TERX/aria2.conf](https://github.com/P3TERX/aria2.conf)
+- [P3TERX/Aria2-Pro-Core](https://github.com/P3TERX/Aria2-Pro-Core)
+- [just-containers/s6-overlay](https://github.com/just-containers/s6-overlay)
+- [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection)
 
 ## License
 
